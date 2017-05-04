@@ -36,6 +36,7 @@
     "font-awesome": "^4.7.0",
     "angular-resource": "^1.6.1",
     "angular-nvd3": "^1.0.9",
-    "ng-dialog": "^1.0.1"
+    "ng-dialog": "^1.0.1",
+    "jquery.min": "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
   }
 }

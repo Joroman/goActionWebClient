@@ -277,7 +277,7 @@ var responseSuccess={
     
     describe('actionsService',function(){
         
-          var api = 'http://localhost:8080/actions';
+          var api = 'http://localhost:3000/actions';
         
         beforeEach(function() {
             // Initialize our local result object to an empty object before each test
@@ -311,7 +311,7 @@ var responseSuccess={
             //PUT OPERATION TO THE SERVER API END POINT
             it('Expect a method that update the action PUT operation',function(){
                 var data_update;
-                var api_update = 'http://localhost:8080/actions/0';
+                var api_update = 'http://localhost:3000/actions/0';
                 
                 actionsService.getActions().update({id:0},update_action,
                     function(upd){
@@ -429,8 +429,8 @@ var responseSuccess={
                     ]
                 };
     
-        var api_query='http://localhost:8080/clients';
-        var api_put  ='http://localhost:8080/clients/0';
+        var api_query='http://localhost:3000/clients';
+        var api_put  ='http://localhost:3000/clients/0';
         var response;
         var up;
         var po;

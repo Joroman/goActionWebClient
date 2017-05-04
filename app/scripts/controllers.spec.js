@@ -250,7 +250,7 @@ describe('Controllers',function(){
     //ACTIONS CONTROLLER
     
         describe('ActionsController',function(){
-        var api='http://localhost:8080/actions';
+        var api='http://localhost:3000/actions';
         var result={};
         $scope=$scope;
        
@@ -331,7 +331,7 @@ describe('Controllers',function(){
     
         describe('GetStartController',function(){
         
-        var api='http://localhost:8080/actions';
+        var api='http://localhost:3000/actions';
        
         beforeEach(function(){
             
@@ -357,8 +357,8 @@ describe('Controllers',function(){
       
     
         describe('EditActionController',function(){
-        var api='http://localhost:8080/actions/0';
-        var api_post='http://localhost:8080/actions';
+        var api='http://localhost:3000/actions/0';
+        var api_post='http://localhost:3000/actions';
         
         var response_pros={
             id                  :0,
@@ -430,7 +430,7 @@ describe('Controllers',function(){
     });
     
         describe('CloseActionController',function(){
-            var api = 'http://localhost:8080/actions';
+            var api = 'http://localhost:3000/actions';
             beforeEach(function(){
                 CloseActionController = $controller('CloseActionController',{$scope:$scope, actionsService:actionsService});
                 
@@ -451,7 +451,7 @@ describe('Controllers',function(){
     
     
         describe('CloseDetailController',function(){
-           var api = 'http://localhost:8080/actions/0';
+           var api = 'http://localhost:3000/actions/0';
             beforeEach(function(){
                 CloseDetailController= $controller('CloseDetailController',{$scope:$scope,actionsService:actionsService});
                 
@@ -583,8 +583,8 @@ describe('Controllers',function(){
     
         describe('ClientsController',function(){
             
-            var api='http://localhost:8080/clients';
-            var api_put='http://localhost:8080/clients/0';
+            var api='http://localhost:3000/clients';
+            var api_put='http://localhost:3000/clients/0';
             var _id=0;
             beforeEach(function(){
                 
@@ -620,8 +620,8 @@ describe('Controllers',function(){
         });
     
         describe('ContactsController', function(){
-            var api= 'http://localhost:8080/clients';
-            var api_up='http://localhost:8080/clients/0';
+            var api= 'http://localhost:3000/clients';
+            var api_up='http://localhost:3000/clients/0';
             
             beforeEach(function(){
                 $httpBackend.verifyNoOutstandingExpectation();
