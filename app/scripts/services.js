@@ -1,5 +1,5 @@
 angular.module('myApp')
-  .constant("baseURL","http://ec2-35-158-94-35.eu-central-1.compute.amazonaws.com:8080/")
+  .constant("baseURL","http://192.168.1.132:3000/")
 
     .service('actionsService',['$resource','baseURL',function($resource,baseURL){
         this.getActions=function(){
@@ -84,7 +84,7 @@ angular.module('myApp')
     };
 }])
 
-.factory('AuthFactory', ['$resource', '$http', '$localStorage', '$rootScope', '$window', 'baseURL', 'ngDialog', function($resource, $http, $localStorage, $rootScope, $window, baseURL, ngDialog){
+.factory('AuthFactory', ['$resource', '$http', '$localStorage', '$rootScope', '$window', 'baseURL', 'ngDialog','$state', function($resource, $http, $localStorage, $rootScope, $window, baseURL, ngDialog,$state){
 
     var authFac = {};
     var TOKEN_KEY = 'Token';
@@ -129,6 +129,7 @@ angular.module('myApp')
            function(response) {
               storeUserCredentials({username:loginData.username, token: response.token});
               $rootScope.$broadcast('login:Successful');
+              $state.go('app.activeActions');
            },
            function(response){
               isAuthenticated = false;

@@ -1,12 +1,12 @@
 angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
     .config(['$stateProvider','$urlRouterProvider','ChartJsProvider',function($stateProvider, $urlRouterProvider,ChartJsProvider) {
-    
+
      // Configure all line charts
     ChartJsProvider.setOptions('line', {
       chartColors: ['#5cb85c','#FF7E67'],
       responsive: true
     });
-    
+
     // route for the home page
         $stateProvider
             .state('app', {
@@ -17,8 +17,8 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                          controller  : 'HeaderController'
                     },
                     'content':{
-                        templateUrl :'views/active_actions.html',
-                        controller  :'ActionsController'
+                        templateUrl :'views/home.html',
+                        controller  :'HeaderController'
                     }
                 }
             })
@@ -31,7 +31,7 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                     }
                 }
             })
-        
+
             .state ('app.getStartAction',{
                 url:'getStart',
                 views:{
@@ -41,7 +41,7 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                     }
                 }
             })
-            
+
             .state('app.editAction',{
                 url:'defined/:id',
                 views:{
@@ -78,7 +78,7 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                     }
                 }
             })
-        
+
           .state('app.closeActions',{
                 url:'close',
                 views:{
@@ -88,7 +88,7 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                     }
                 }
             })
-            
+
             .state('app.closeActions.detail',{
                 url:'detail:id',
                 views:{
@@ -98,15 +98,15 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                     }
                 }
             })
-            
-        
+
+
             .state('app.clients',{
                 url:'clients',
                 views:{
                     'content@':{
                         templateUrl :'views/clients.html',
                         controller  :'ClientsController'
-                    }   
+                    }
                 }
             })
             .state('app.clients.contacts',{
@@ -115,7 +115,7 @@ angular.module('myApp', ['ui.router','ngResource','nvd3',"chart.js",'ngDialog'])
                     'content@':{
                         templateUrl :'views/contacts.html',
                         controller  :'ContactsController'
-                    }   
+                    }
                 }
             })
             .state('app.sales',{

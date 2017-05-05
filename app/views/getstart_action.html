@@ -1,26 +1,32 @@
 <div class="container-fluid" ng-controller="GetStartController" style="padding: 30px 10px 0px 10px">
     <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-push-1 col-md-pull-1">
+        <div ng-if="!getStart" class="col-xs-12 col-md-10 col-md-push-1 col-md-pull-1">
+          <blockquote>
+            <p class="text-primary">You have to define the client before to start and action in the client section </p>
+            <footer class="text-primary">Think in your futer client</footer>
+          </blockquote>
+        </div>
+        <div ng-if="getStart" class="col-xs-12 col-md-10 col-md-push-1 col-md-pull-1">
             <br>
             <br>
             <div class="row">
                 <div class="col-xs-6 col-md-6">
                     <h3 class="color1"><i class="glyphicon glyphicon-play-circle"></i>&nbsp;&nbsp;GetStart Action Sale</h3>
                 </div>
-            </div>  
+            </div>
             <br>
-          
-            
+
+
             <br>
             <!-- ACTION PHASES-->
             <div class="row">
-                
+
                 <!-- DEFINE ACTIONS-->
                 <div class="col-xs-6 col-md-3 placeholder">
                     <div class="panel panel-success">
                         <div class="panel-heading" role="tab" id="headingOne">
                           <h4 class="panel-title">
-                                <i class="fa fa-comment-o fa-4x"></i>&nbsp;&nbsp;&nbsp; 
+                                <i class="fa fa-comment-o fa-4x"></i>&nbsp;&nbsp;&nbsp;
                               <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="ture" aria-controls="collapseOne">
                               Defined Action
                             </a>
@@ -33,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div id="getStartForm" class="col-xs-12 col-md-8 thumbnail">
                  <div class="caption">
                     <form name='defineForm' ng-submit="save()" novalidate>
@@ -64,12 +70,12 @@
                                 </div>
                                  <button type="submit" class="btn btn-success" ng-disabled="defineForm.$invalid">SAVE</button>
                             </form>
-                    </div>  
+                    </div>
                 </div>
             </div>
-           
+
         </div>
-       
+
     </div>
     <!------------------------------------------->
     <!--MODALS #ChoseClientModal -->
@@ -86,13 +92,11 @@
                     <a data-dismiss="modal" type="button" class="list-group-item text-center" ng-click='clientChose(client)'>{{client.company_name}}</a>
                     </div>
               </div>
-          </div>         
+          </div>
         </div>
       </div>
-    </div> 
-    
-    
-    
+    </div>
+
+
+
 </div>
-
-
