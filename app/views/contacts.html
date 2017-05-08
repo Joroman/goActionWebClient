@@ -1,16 +1,16 @@
 <div class="container-fluid" ng-controller="ContactsController" style="padding: 30px 10px 0px 10px">
    <div class='row'>
-      
+
       <div class="col-xs-12 col-md-10 col-md-push-1 col-md-pull-1">
             <br><br><br>
-          
+
             <div class="row">
                 <div class="col-xs-6 col-md-12">
                     <h3 class="color1"><i class="fa fa-address-book"></i>&nbsp;&nbsp;&nbsp;{{client.company_name}} Contacs
                      &nbsp;&nbsp;
                         <a data-target="#newContactModal" class="btn btn-primary btn-xs" role="button" data-toggle="modal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;New</a> </h3>
                 </div>
-            </div>  
+            </div>
            <br>
             <!-- CONTACTS CLIENT-->
            <div class="row">
@@ -24,22 +24,22 @@
                                     <address class="text-primary text-center">
                                         <div class='row'>
                                             <div class="col-xs-7 col-md-1 col-md-push-1">
-                                             
+
                                             </div>
-                                            <div class="col-xs-7 col-md-10"> 
-                                                {{cont.category}} 
+                                            <div class="col-xs-7 col-md-10">
+                                                {{cont.category}}
                                             </div>
-                                         
-                                          <div class="col-xs-7 col-md-1 col-md-push-1">      
+
+                                          <div class="col-xs-7 col-md-1 col-md-push-1">
                                                 <i class="glyphicon glyphicon-earphone"></i>
                                             </div>
-                                            <div class="col-xs-7 col-md-10">   
+                                            <div class="col-xs-7 col-md-10">
                                                 <abbr title="Phone">P:</abbr> {{cont.phone}}
                                             </div>
-                                            <div class="col-xs-7 col-md-1 col-md-push-1">  
+                                            <div class="col-xs-7 col-md-1 col-md-push-1">
                                                 <i class="glyphicon glyphicon-envelope"></i>
                                             </div>
-                                            <div class="col-xs-7 col-md-10">  
+                                            <div class="col-xs-7 col-md-10">
                                                 <a href="mailto:#">{{cont.email}}</a>
                                             </div>
                                         </div>
@@ -47,27 +47,27 @@
                                 </div>
                             <div class="row">
                                 <div class="col-xs-8 col-xs-offset-4 col-md-8 col-md-offset-4">
-                                    
-                                  
-                                        <a data-target="#EditContactModal"  data-toggle="modal" data-tooltip="tooltip" title="Edit Contact" class="btn btn-warning btn-xs" role="button" ng-click='takeContact(cont)' > <span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> 
-                                   
-                                  
+
+
+                                        <a data-target="#EditContactModal"  data-toggle="modal" data-tooltip="tooltip" title="Edit Contact" class="btn btn-warning btn-xs" role="button" ng-click='takeContact(cont)' > <span class="fa fa-pencil-square-o" aria-hidden="true"></span></a>
+
+
                                         <a data-target="#deleteContactModal"  data-toggle="modal" class="btn btn-danger btn-xs" role="button" data-tooltip="tooltip"  title="Delete Contact" ng-click='takeContact(cont)'>
                                             <span class="fa fa-trash" aria-hidden="true" ></span>
                                         </a>
-                                   
+
                                 </div>
                             </div>
                         </div>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>
-      
+
         </div>
     </div>
-  
+
 
 
 <!-- MODALS DEFINITION-->
@@ -82,7 +82,7 @@
             <h4 class="modal-title text-muted text-center" id="exampleModalLabel">New Contact</h4>
           </div>
           <div class="modal-body">
-                
+
               <form name='newContactForm' novalidate>
                     <div class="form-group">
                         <label for="name" class="control-label">Name</label>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </form>
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"> Close</button>
@@ -115,7 +115,7 @@
           </div>
         </div>
       </div>
-</div> 
+</div>
 
 <!-- EDIT CONTACT MODAL -->
 <div class="modal fade" id="EditContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -126,7 +126,7 @@
             <h4 class="modal-title text-muted text-center" id="exampleModalLabel">Edit Contact</h4>
           </div>
           <div class="modal-body">
-                
+
               <form name='editContactForm' novalidate>
                     <div class="form-group">
                         <label for="name" class="control-label">Name</label>
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </form>
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" ng-click='getClient()' data-dismiss="modal"> Close</button>
@@ -160,7 +160,7 @@
         </div>
       </div>
 </div>
-    
+
 
 <!--DELETE  #deleteContactModal MODALS-->
   <div class="modal fade" id="deleteContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -171,9 +171,9 @@
             <h4 class="modal-title text-muted text-center" id="exampleModalLabel">Delete Contact</h4>
           </div>
           <div class="modal-body">
-                
+
             <p>Are you sure you want to delete &nbsp;{{contact.name}}&nbsp; contact</p>
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"> Close</button>
@@ -181,7 +181,6 @@
           </div>
         </div>
       </div>
-</div>   
-    
-</div>      
-    
+</div>
+
+</div>

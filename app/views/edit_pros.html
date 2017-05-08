@@ -1,14 +1,14 @@
 <div class="container-fluid" ng-controller="EditActionController" style="padding: 30px 10px 0px 10px">
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-push-1 col-md-pull-1">
-            <br> 
+            <br>
             <br>
             <!-- ACTION PHASES-->
             <div class="row">
 
                 <!-- DEFINE ACTIONS-->
                 <div class="col-xs-3 col-md-3 placeholder">
-                    <!--PANEL PROSPECT ACTION -->   
+                    <!--PANEL PROSPECT ACTION -->
                     <div ng-repeat='panel in panels'>
                         <div class="panel {{panel.color}}">
                             <div class="panel-heading" role="tab" id="headingTwo">
@@ -27,10 +27,10 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-warning" ng-click='show()'>{{textButton}}</button>
-                   
+
                     <!-- Small modal CLOSE-->
                     <button type="button" class="btn btn-danger" ng-click="showClose()"> Action Close</button>
-                    
+
                 </div>
                 <!--FORMS AND PANELS-->
                 <div  class="col-xs-9 col-md-9">
@@ -46,14 +46,14 @@
                                 </div>
                               <!-- List group -->
                               <ul class="list-group">
-                                  
+
                                 <li class="list-group-item text-center">
                                     <div class="row">
                                         <div class="col-xs-6 col-md-3">
                                             <h5><strong>Action Name</strong></h5> <em> {{action.name}}</em>
                                         </div>
                                         <div class="col-xs-6 col-md-3">
-                                            <h5><strong>Client:</strong></h5> <em>   {{action._client}}</em>
+                                            <h5><strong>Client:</strong></h5> <em>   {{action.client_name}}</em>
                                         </div>
                                         <div class="col-xs-6 col-md-3">
                                               <h5><strong>Start Date:</strong></h5> <em>   {{action.start_date| date: "yyyy-MM-dd"}}</em>
@@ -61,16 +61,16 @@
                                         <div class="col-xs-6 col-md-3">
                                             <h5><strong>End Date:</strong></h5> <em>   {{action.end_date| date: "yyyy-MM-dd"}}</em>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </li>
-                                
-                                <li class="list-group-item text-center"><h5><strong>Action Description:</strong></h5> <em>   {{action.description}}</em></li> 
+
+                                <li class="list-group-item text-center"><h5><strong>Action Description:</strong></h5> <em>   {{action.description}}</em></li>
                               </ul>
                              </div>
-                
-                    <!--DETAIL  PANEL PRPOSPECT ACTION-->   
+
+                    <!--DETAIL  PANEL PRPOSPECT ACTION-->
                             <div class="panel panel-info">
                               <!-- Default panel contents -->
                                 <div class="panel-heading">
@@ -79,30 +79,30 @@
                                 </div>
                               <!-- List group -->
                               <ul class="list-group">
-                                <li class="list-group-item text-center"><h5><strong>Action Name</strong></h5> <em> {{action.prospection.objective}}</em></li>
-                                
-                                  
-                                <li class="list-group-item text-center">  
+                                <li class="list-group-item text-center"><h5><strong>Prospect Objective</strong></h5> <em> {{action.prospection.objective}}</em></li>
+
+
+                                <li class="list-group-item text-center">
                                     <div class='row'>
                                         <div class='col-xs-6 col-md-6'>
                                             <h5><strong>Client:</strong></h5> <em>   {{action.prospection.contact}}</em>
                                         </div>
                                         <div class='col-xs-6 col-md-6'>
-                                            <h5><strong>Action Description:</strong></h5> <em>   {{action.prospection.meeting_date | date: "yyyy-MM-dd"}}</em>
+                                            <h5><strong>Client Meeting Date:</strong></h5> <em>   {{action.prospection.meeting_date | date: "yyyy-MM-dd"}}</em>
                                         </div>
                                     </div>
-                                </li>  
+                                </li>
                               </ul>
-                            </div>    
+                            </div>
                     </div>
                     </div>
                     </div>
-                    
-                    <!--EDIT  FORM PROSPECTION ACTION--> 
+
+                    <!--EDIT  FORM PROSPECTION ACTION-->
                     <div class='row'>
                         <div id="getStartForm" class='col-md-9 col-md-offset-1 thumbnail' ng-show=show_edit>
-                        <div class="caption">   
-                           
+                        <div class="caption">
+
                                 <form name='prospectionForm' ng-submit="update()" novalidate>
                                     <div class="form-group">
                                         <label for="objective">Prospect Objective</label>
@@ -121,16 +121,16 @@
                                     </div>
                                      <button type="submit" class="btn btn-success" ng-disabled="prospectionForm.$invalid" ng-click="show1()">SAVE</button>
                                 </form>
-                          
+
                         </div>
                         </div>
-                    </div> 
-                    
-                    <!--NEW  REQUEST ACTION-->  
+                    </div>
+
+                    <!--NEW  REQUEST ACTION-->
                     <div class='row'>
                         <div id="getStartForm" class='col-md-9 col-md-offset-1 thumbnail' ng-show=show_create>
-                        <div class="caption"> 
-                                
+                        <div class="caption">
+
                                 <form name='requestForm' ng-submit="saveNew()" novalidate>
                                     <div class="form-group">
                                         <label for="service">Service / Product Description</label>
@@ -151,14 +151,14 @@
                                     </div>
                                      <button type="submit" class="btn btn-success" ng-disabled="requestForm.$invalid">SAVE</button>
                                 </form>
-                               
+
                         </div>
                         </div>
                     </div>
                      <!--CLOSE  PROSPECTION ACTION-->
                     <div class='row'>
                     <div id="getStartForm" class='col-md-9 col-md-offset-1 thumbnail' ng-show=show_close>
-                        <div class="caption"> 
+                        <div class="caption">
 
                                 <form name='closeForm' ng-submit="close()" novalidate>
                                     <div class="form-group">
@@ -168,15 +168,15 @@
 
                                      <button type="submit" class="btn btn-danger" ng-disabled="closeForm.$invalid">Close Action</button>
                                 </form>
-                          
-                        </div> 
+
+                        </div>
                     </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
-    
+
     <!------------------------------------------------>
     <!-- MODALS #ChoseContactModal-->
     <div class="modal fade" id="ChoseContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -192,11 +192,8 @@
                     <a data-dismiss="modal" type="button" class="list-group-item text-center" ng-click='contactChose(contact)'>{{contact.name}}</a>
                     </div>
               </div>
-          </div>         
+          </div>
         </div>
       </div>
-    </div> 
+    </div>
 </div>
-       
-   
-

@@ -10,12 +10,12 @@
                    <div class="col-xs-7 col-xs-offset-5 col-sm-7 col-sm-offset-5">
                             <label for="start_date">Year</label>
                             <input class="input-sm" type="text" id="start_date"  placeholder='&nbsp;{{year | date: "yyyy"}}' ng-model='year'>
-                             <a  ng-click="newYear()" class="btn btn-success btn-xs" role="button" ><span class="fa fa-sign-in" aria-hidden="true"></span></a> 
+                             <a  ng-click="newYear()" class="btn btn-success btn-xs" role="button" ><span class="fa fa-sign-in" aria-hidden="true"></span></a>
                     </div>
-            </div>  
+            </div>
                 <br>
                 <br>
-    
+
             <div class='row'>
                 <div class="col-xs-2 col-md-2">
                       <div class="panel panel-success">
@@ -26,10 +26,10 @@
                                     </div>
                                     <div class="col-xs-9">
                                         <h4>WIN: {{numActionsWin}}</h4>
-                                      
+
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                         <div class="panel panel-danger">
                             <div class="panel-heading">
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="col-xs-9 ">
                                         <h4>LOSE: {{numActionsLose}}</h4>
-                                     
+
                                     </div>
                                 </div>
                             </div>
@@ -59,12 +59,12 @@
     <br>
     <br>
     <br>
-    
+
     <!--TABLE REPORTS-->
     <div class="row">
         <div class="col-xs-12 col-md-5 col-md-push-1">
          <!-- Table WIN-->
-          
+
                 <div class="panel panel-success">
                     <!-- Default panel contents -->
                     <div class="panel-heading" style="background:#5cb85c">
@@ -73,7 +73,7 @@
                     <table class="table">
                         <tr>
                             <th>{{table_header_win[0]}}</th>
-                            <th>{{table_header_win[1]}}</th> 
+                            <th>{{table_header_win[1]}}</th>
                             <th>{{table_header_win[2]}}</th>
                             <th>{{table_header_win[3]}}</th>
                             <th>{{table_header_win[4]}}</th>
@@ -81,11 +81,11 @@
                         </tr>
                         <tr ng-repeat="act_0 in actionsWinYear | orderBy: '-feedback.project_start_date'">
                             <td>{{act_0.feedback.project_start_date | date: "yyyy-MM-dd"}}</td>
-                            <td>{{act_0._client}}</td>
+                            <td>{{act_0.client_name}}</td>
                             <td>{{act_0.prospection.contact}}</td>
                             <td>{{act_0.response.offer_budget}}</td>
                             <td>{{act_0.response.offer_margin}}</td>
-                            <td> 
+                            <td>
                            <a ng-click='detail(act_0)' class="btn btn-success btn-xs" role="button">Show</a></td>
                         </tr>
                     </table>
@@ -93,7 +93,7 @@
         </div>
             <!--TABLES LOSE -->
         <div class="col-xs-12 col-md-5 col-md-push-1">
-         
+
                 <div class="panel panel-danger">
                     <!-- Default panel contents -->
                     <div class="panel-heading" style="background:#d9534f">
@@ -102,21 +102,20 @@
                     <table class="table">
                         <tr>
                             <th>{{table_header_lose[0]}}</th>
-                            <th>{{table_header_lose[1]}}</th> 
+                            <th>{{table_header_lose[1]}}</th>
                             <th>{{table_header_lose[2]}}</th>
                             <th>{{table_header_lose[3]}}</th>
                         </tr>
                         <tr ng-repeat="act_2 in actionsLoseYear | orderBy: '-feedback.project_start_date'">
                             <td>{{act_2.feedback.project_start_date| date: "yyyy-MM-dd"}}</td>
-                            <td>{{act_2._client}}</td>
+                            <td>{{act_2.client_name}}</td>
                             <td>{{act_2.prospection.contact}}</td>
-                            <td> 
+                            <td>
                             <a ng-click="detail(act_2)" >Show</a></td>
-                        </tr>                        
+                        </tr>
                     </table>
-                         
+
             </div>
         </div>
     </div>
 </div>
-

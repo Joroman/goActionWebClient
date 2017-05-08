@@ -8,7 +8,7 @@
 
                 <!-- DEFINE ACTIONS-->
             <div class="col-xs-3 col-md-3 placeholder">
-                     <!--PANEL ACTION DEFINED-->   
+                     <!--PANEL ACTION DEFINED-->
                     <div ng-repeat='panel in panels'>
                         <div class="panel {{panel.color}}">
                             <div class="panel-heading" role="tab" id="headingTwo">
@@ -27,16 +27,16 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-warning" ng-click='show()'>{{textButton}}</button>
-                    
+
                     <!-- Small modal CLOSE-->
                     <button type="button" class="btn btn-danger" ng-click="showClose()"> Action Close</button>
 
-                    
-                    
+
+
                 </div>
                 <!--FORMS AND PANELS-->
             <div  class="col-xs-9 col-md-8">
-                
+
                 <!--DETAIL PANEL DEFINED ACTION-->
                 <div class='row'>
                     <div class='col-xs-12 col-md-8 col-md-offset-1'>
@@ -50,13 +50,13 @@
                               <!-- List group -->
                               <ul class="list-group">
                                 <li class="list-group-item text-center"><h5><strong>Action Name</strong></h5> <em> {{action.name}}</em></li>
-                                
-                                <li class="list-group-item text-center"><h5><strong>Client:</strong></h5> <em>   {{action._client}}</em></li>
-                                
+
+                                <li class="list-group-item text-center"><h5><strong>Client:</strong></h5> <em>   {{action.client_name}}</em></li>
+
                                 <li class="list-group-item text-center"><h5><strong>Action Description:</strong></h5> <em>   {{action.description}}</em></li>
-                                
+
                                 <li class="list-group-item text-center"><h5><strong>Start Date:</strong></h5> <em>   {{action.start_date  | date:'yyyy-MM-dd'}}</em></li>
-                                
+
                                 <li class="list-group-item text-center"><h5><strong>End Date:</strong></h5> <em>   {{action.end_date  | date:'yyyy-MM-dd'}}</em></li>
                               </ul>
                             </div>
@@ -67,8 +67,8 @@
                     <div class= 'row'>
                         <div  class="col-xs-12 col-md-11 col-md-offset-1 thumbnail" id="getStartForm" ng-show=show_edit>
                             <div class="caption">
-                           
-                               
+
+
                                 <form name='defineForm' ng-submit="update()" novalidate>
                                     <div class="form-group" >
                                         <label for="action_name">Action Name</label>
@@ -81,7 +81,7 @@
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default" type="button">Go!</button>
                                             </span>
-                                            <input type="text" class="form-control" placeholder={{action._client}} disabled>
+                                            <input type="text" class="form-control" placeholder={{action.client_name}} disabled>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -101,7 +101,7 @@
                                     </div>
                                         <button type="submit" class="btn btn-success" ng-disabled='defineForm.$invalid' ng-click='show1()'>SAVE</button>
                                 </form>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     <div class= 'row'>
                         <div  class="col-xs-12 col-md-11 col-md-offset-1 thumbnail" id="getStartForm" ng-show=show_create>
                         <div class="caption">
-                                    
+
                             <form name='prospectForm' ng-submit="saveNew()" novalidate>
                                         <div class="form-group">
                                             <label for="objective">Prospect Objective</label>
@@ -127,15 +127,15 @@
                                             <input class="form-control" type="date" id="pros_date" ng-model="action.prospection.meeting_date" required>
                                         </div>
                                          <button type="submit" class="btn btn-success" ng-disabled="prospectForm.$invalid">SAVE</button>
-                                    </form>    
+                                    </form>
                         </div>
                         </div>
                     </div>
                     <!--CLOSE ACTION PROSPECTION-->
                     <div class= 'row'>
                         <div  class="col-xs-12 col-md-11 col-md-offset-1 thumbnail" id="getStartForm" ng-show=show_close>
-                        <div class="caption">         
-                               
+                        <div class="caption">
+
                                     <form name='closeForm' ng-submit="close()" novalidate>
                                         <div class="form-group">
                                             <label for="feedback">Feedback</label>
@@ -144,14 +144,14 @@
 
                                          <button type="submit" class="btn btn-danger" ng-disabled="closeForm.$invalid">Close Action</button>
                                     </form>
-                                        
+
                              </div>
                         </div>
                     </div>
                 <!------------------------------------->
             </div>
         </div>
-        </div> 
+        </div>
     </div>
 <!------------------------------------------------>
     <!-- MODALS #ChoseContactModal-->
@@ -168,12 +168,9 @@
                     <a data-dismiss="modal" type="button" class="list-group-item text-center" ng-click='contactChose(contact)'>{{contact.name}}</a>
                     </div>
               </div>
-          </div>         
+          </div>
         </div>
       </div>
-    </div> 
-    
-</div>
-           
-       
+    </div>
 
+</div>
